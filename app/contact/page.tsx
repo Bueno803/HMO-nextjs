@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useState } from "react"
 import Link from "next/link"
 import { Mail, Phone, MapPin, Clock, Send, ArrowRight, UserPlus } from "lucide-react"
@@ -110,7 +111,32 @@ export default function ContactPage() {
       <main className="pt-20">
         {/* Hero */}
         <section className="bg-primary py-16 lg:py-24">
-          <div className="mx-auto max-w-7xl px-4 lg:px-8">
+
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/contact/headliner.png"
+              alt="Community gathering"
+              fill
+              className="object-cover"
+              priority
+              sizes="100vw"
+              quality={100}
+            />
+            <div className="absolute inset-0 bg-primary/70" />
+          </div>
+
+          <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 text-center lg:px-8 lg:py-32">
+            <h1 className="font-serif text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl text-balance">
+              Get in Touch<br />
+              {/* <span className="text-secondary">most likely to be missed</span> */}
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/90 lg:text-xl">
+              Have questions about our programs, partnership opportunities, or how 
+                you can get involved? We would love to hear from you.
+            </p>
+          </div>
+
+          {/* <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="font-serif text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl text-balance">
                 Get in Touch
@@ -120,7 +146,7 @@ export default function ContactPage() {
                 you can get involved? We would love to hear from you.
               </p>
             </div>
-          </div>
+          </div> */}
         </section>
 
         {/* Contact Info Cards */}
@@ -304,15 +330,14 @@ export default function ContactPage() {
                     Need Immediate Assistance?
                   </h3>
                   <p className="mt-2 text-primary-foreground/80">
-                    If you or someone you know needs immediate support through one of our programs, 
-                    please call us directly during office hours.
+                    If you would like to speak to a Hear Me Out staff person, email us at info@hmohearmeout.org and we will respond as soon as possible!
                   </p>
                   <a 
                     href="tel:+15551234567"
                     className="mt-4 inline-flex items-center gap-2 text-lg font-semibold text-secondary hover:text-secondary/80 transition-colors"
                   >
                     <Phone className="h-5 w-5" />
-                    (555) 123-4567
+                    (323) 348-4096
                   </a>
                 </div>
               </div>

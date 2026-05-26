@@ -16,8 +16,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Rooted Foundation | Empowering Communities Through Grants',
-  description: 'A grant-based nonprofit organization dedicated to empowering communities, fostering growth, and creating lasting positive change through strategic partnerships and impactful programs.',
+  title: 'Hear Me Out 501c3 | Established for Community Members Most Likely to Be Missed',
+  description: 'Hear Me Out provides holistic services with a focus on education, violence and gang prevention, and social-emotional development for system-impacted youth and formerly incarcerated adults in South Los Angeles.',
   generator: 'v0.app',
   icons: {
     icon: [
