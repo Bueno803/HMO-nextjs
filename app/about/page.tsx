@@ -1,67 +1,50 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Target, Eye, Heart } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
-const values = [
-  {
-    icon: Target,
-    title: "Purpose-Driven",
-    description: "Every decision we make is guided by our commitment to creating meaningful, lasting change in the communities we serve.",
-  },
-  {
-    icon: Eye,
-    title: "Transparency",
-    description: "We maintain complete transparency in our operations, finances, and impact metrics, ensuring trust with our donors and partners.",
-  },
-  {
-    icon: Heart,
-    title: "Community First",
-    description: "We listen to the communities we serve, ensuring our programs address real needs and are developed collaboratively.",
-  },
-]
-
 const team = [
   {
-    name: "Dr. Sarah Mitchell",
-    title: "Executive Director",
-    image: "/images/team-1.jpg",
+    name: "Tobias Tubbs",
+    title: "President & Co-Founder",
+    image: "/about/tobias.png",
   },
   {
-    name: "Marcus Johnson",
-    title: "Program Director",
-    image: "/images/team-2.jpg",
+    name: "Kimi Lent",
+    title: "Program Director & Co-Founder",
+    image: "/about/kimi.png",
   },
   {
-    name: "Elena Rodriguez",
-    title: "Development Director",
-    image: "/images/team-3.jpg",
+    name: "Tahirah Spann",
+    title: "Administrative Director",
+    image: "/about/tahirah.png",
   },
   {
-    name: "David Chen",
-    title: "Community Outreach Manager",
-    image: "/images/team-4.jpg",
+    name: "Dimitri \"Budda\" Gales",
+    title: "Lead Facilitator & Sports Director",
+    image: "/about/Dimitri.png",
+  },
+  {
+    name: "Genea Richardson",
+    title: "Agriculture & Wellness Workforce Instructor",
+    image: "/about/Genea.png",
+  },
+  {
+    name: "Kenneth Webb",
+    title: "Visual Arts Consultant",
+    image: "/about/keneth.png",
   },
 ]
 
 const partners = [
-  { name: "Greenway Community Foundation", image: "/images/partner-1.jpg" },
-  { name: "Community First Bank", image: "/images/partner-2.jpg" },
-  { name: "Regional Health Alliance", image: "/images/partner-3.jpg" },
-  { name: "United Community Fund", image: "/images/partner-4.jpg" },
-  { name: "TechForGood Initiative", image: "/images/partner-5.jpg" },
-  { name: "Metro Education Coalition", image: "/images/partner-6.jpg" },
-]
-
-const milestones = [
-  { year: "2010", event: "Founded with a vision to empower communities" },
-  { year: "2013", event: "Launched our first community garden initiative" },
-  { year: "2016", event: "Expanded to serve 5 additional neighborhoods" },
-  { year: "2019", event: "Reached 1,000 families served annually" },
-  { year: "2022", event: "Established strategic partnerships with 15+ organizations" },
-  { year: "2024", event: "Launched comprehensive workforce development program" },
+  { name: "Huma House", image: "/about/huma.png" },
+  { name: "Los Angeles Chargers", image: "/about/lachargers.png" },
+  { name: "Alta", image: "/about/alta.png" },
+  { name: "CFCI", image: "/about/cfci.png" },
+  { name: "LA vs Hate", image: "/about/lavshate.gif" },
+  { name: "Niagara Foundation", image: "/about/niagara.png" },
 ]
 
 export default function AboutPage() {
@@ -74,24 +57,26 @@ export default function AboutPage() {
         <section className="relative py-16 lg:py-24">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/about-hero.jpg"
-              alt="Our team"
+              src="/about/headliner.png"
+              alt="Community gathering"
               fill
               className="object-cover"
+              priority
+              sizes="100vw"
+              quality={100}
             />
-            <div className="absolute inset-0 bg-primary/80" />
+            <div className="absolute inset-0 bg-primary/70" />
           </div>
-          <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <h1 className="font-serif text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl text-balance">
-                About Rooted Foundation
-              </h1>
-              <p className="mt-6 text-lg leading-relaxed text-primary-foreground/90">
-                For over a decade, we have been dedicated to cultivating growth and 
-                empowering communities. Learn about our journey, our team, and the 
-                values that guide everything we do.
-              </p>
-            </div>
+
+          <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 text-center lg:px-8 lg:py-32">
+            <h1 className="font-serif text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl text-balance">
+              About Hear Me Out<br />
+              {/* <span className="text-secondary">most likely to be missed</span> */}
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/90 lg:text-xl">
+              Established for community members most likely to be missed. Learn about 
+                our journey, our team, and the values that guide everything we do.
+            </p>
           </div>
         </section>
 
@@ -102,31 +87,32 @@ export default function AboutPage() {
               <div>
                 <span className="text-sm font-semibold uppercase tracking-wider text-accent">Our Mission</span>
                 <h2 className="mt-4 font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                  Empowering Communities to Thrive
+                  Breaking Cycles, Building Futures Through Holistic Support
                 </h2>
                 <div className="mt-6 space-y-4 text-lg leading-relaxed text-muted-foreground">
                   <p>
-                    Our mission is to empower communities through strategic grants, 
-                    innovative programs, and meaningful partnerships that create 
-                    lasting positive change and help individuals and families thrive.
+                    Our Mission is to provide holistic services with a focus on education, 
+                    violence and gang prevention, successful reentry (from incarceration) and 
+                    social-emotional development. Our trauma-informed framework is applied 
+                    through academic recovery, whole person care and court advocacy.
                   </p>
                   <p>
-                    We believe that every community has the potential to flourish when 
-                    given the right support. Through our grant-based approach, we 
-                    invest in programs that address root causes, build local capacity, 
-                    and create sustainable pathways to success.
+                    By establishing a healthy family ecosystem aimed at breaking cycles of 
+                    poverty, addiction, violence, and incarceration, Hear Me Out 501c3 extends 
+                    comprehensive services and programs to system-impacted youth and formerly 
+                    incarcerated adults.
                   </p>
                   <p>
-                    From education and health to family services and economic empowerment, 
-                    we are committed to holistic community development that honors the 
-                    unique strengths and needs of those we serve.
+                    Through strategic grants, innovative programs, and meaningful partnerships, 
+                    we create lasting positive change and help individuals, families and 
+                    therefore communities thrive.
                   </p>
                 </div>
               </div>
               <div className="relative h-96 overflow-hidden rounded-xl">
                 <Image
-                  src="/images/community-garden.jpg"
-                  alt="Community garden representing growth and empowerment"
+                  src="/about/mission.png"
+                  alt="Community support and empowerment"
                   fill
                   className="object-cover"
                 />
@@ -141,7 +127,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
               <div className="order-2 lg:order-1 relative h-96 overflow-hidden rounded-xl">
                 <Image
-                  src="/images/our-story.jpg"
+                  src="/about/vision.png"
                   alt="Community members working together toward a shared vision"
                   fill
                   className="object-cover"
@@ -150,24 +136,25 @@ export default function AboutPage() {
               <div className="order-1 lg:order-2">
                 <span className="text-sm font-semibold uppercase tracking-wider text-accent">Our Vision</span>
                 <h2 className="mt-4 font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                  A Future Where Everyone Flourishes
+                  A Future Beyond Cycles of Harm
                 </h2>
                 <div className="mt-6 space-y-4 text-lg leading-relaxed text-muted-foreground">
                   <p>
-                    We envision a world where every community has the resources, support, 
-                    and opportunities needed to flourish—where growth is rooted in 
-                    collaboration, sustainability, and shared success.
+                    We envision a future where system-impacted youth, formerly incarcerated 
+                    adults, and their families have access to the support, opportunities, and 
+                    community needed to thrive.
                   </p>
                   <p>
-                    In this future, barriers to opportunity are dismantled, families 
-                    have access to the support they need, and neighborhoods are vibrant 
-                    hubs of connection and possibility. Communities lead their own 
-                    transformation, supported by partners who believe in their potential.
+                    In this future, cycles of poverty, violence, addiction, and incarceration 
+                    are broken through education, advocacy, healing, and meaningful connection. 
+                    Young people are empowered to lead stable and fulfilling lives, families are 
+                    strengthened through whole-person support, and reentry adults are welcomed 
+                    back into their communities with dignity and opportunity.
                   </p>
                   <p>
-                    We work toward this vision every day, knowing that lasting change 
-                    happens when we invest in people and trust communities to grow 
-                    strongest when they grow together.
+                    We work toward this vision every day by investing in people, building healthy 
+                    support systems, and creating spaces where healing, accountability, and 
+                    long-term growth are possible.
                   </p>
                 </div>
               </div>
@@ -188,7 +175,7 @@ export default function AboutPage() {
                 commitment to community empowerment and meaningful impact.
               </p>
             </div>
-            <div className="mt-12 grid grid-cols-2 gap-8 sm:grid-cols-4">
+            <div className="mt-12 grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
               {team.map((member) => (
                 <div key={member.name} className="flex flex-col items-center text-center">
                   <div className="relative h-28 w-28 overflow-hidden rounded-full sm:h-36 sm:w-36">
@@ -199,7 +186,7 @@ export default function AboutPage() {
                       className="object-cover"
                     />
                   </div>
-                  <h3 className="mt-4 font-serif text-base font-semibold text-foreground sm:text-lg">
+                  <h3 className="mt-4 font-serif text-base font-semibold text-foreground">
                     {member.name}
                   </h3>
                   <p className="mt-1 text-sm text-muted-foreground">{member.title}</p>
@@ -222,77 +209,23 @@ export default function AboutPage() {
                 agencies, and community organizations who share our commitment to lasting change.
               </p>
             </div>
-            <div className="mt-12 grid grid-cols-3 gap-6 sm:grid-cols-6">
+            <div className="mt-12 grid grid-cols-3 gap-8 max-w-3xl mx-auto">
               {partners.map((partner) => (
-                <div key={partner.name} className="flex flex-col items-center">
-                  <div className="relative h-20 w-20 overflow-hidden rounded-full sm:h-24 sm:w-24">
+                <div key={partner.name} className="flex flex-col items-center text-center">
+                  <div className="relative h-24 w-40 overflow-hidden rounded-lg">
                     <Image
                       src={partner.image}
                       alt={partner.name}
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
+                  <p className="mt-3 text-sm font-medium text-foreground">{partner.name}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
-
-        {/* Values */}
-        {/* <section className="py-16 lg:py-24">
-          <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <span className="text-sm font-semibold uppercase tracking-wider text-accent">What Guides Us</span>
-              <h2 className="mt-4 font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                Our Core Values
-              </h2>
-            </div>
-            <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
-              {values.map((value) => (
-                <div key={value.title} className="text-center">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-accent/10">
-                    <value.icon className="h-7 w-7 text-accent" />
-                  </div>
-                  <h3 className="mt-6 font-serif text-xl font-semibold text-foreground">
-                    {value.title}
-                  </h3>
-                  <p className="mt-3 text-muted-foreground">
-                    {value.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section> */}
-
-        {/* Timeline */}
-        {/* <section className="py-16 lg:py-24 bg-muted">
-          <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <span className="text-sm font-semibold uppercase tracking-wider text-accent">Our Journey</span>
-              <h2 className="mt-4 font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                Milestones
-              </h2>
-            </div>
-            <div className="mt-12 mx-auto max-w-3xl">
-              <div className="relative">
-                <div className="absolute left-4 top-0 h-full w-0.5 bg-border lg:left-1/2 lg:-translate-x-1/2" />
-                <div className="space-y-8">
-                  {milestones.map((milestone, index) => (
-                    <div key={milestone.year} className={`relative flex items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
-                      <div className={`ml-12 lg:ml-0 lg:w-1/2 ${index % 2 === 0 ? 'lg:pr-12 lg:text-right' : 'lg:pl-12'}`}>
-                        <span className="font-serif text-2xl font-bold text-accent">{milestone.year}</span>
-                        <p className="mt-1 text-muted-foreground">{milestone.event}</p>
-                      </div>
-                      <div className="absolute left-4 h-3 w-3 rounded-full bg-accent lg:left-1/2 lg:-translate-x-1/2" />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
 
         {/* CTA */}
         <section className="py-16 lg:py-24 bg-primary">
@@ -303,7 +236,7 @@ export default function AboutPage() {
               </h2>
               <p className="mt-6 text-lg text-primary-foreground/80">
                 Whether through donations, partnerships, or volunteering, there are 
-                many ways to support our work and help communities grow.
+                many ways to support our work and help communities thrive.
               </p>
               <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">

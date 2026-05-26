@@ -47,7 +47,7 @@ function MobileDrawer({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
           >
             <Link href="/" className="-m-1.5 p-1.5" onClick={onClose}>
               <span className="text-xl font-serif font-bold text-primary">
-                Rooted Foundation
+                Hear Me Out 501c3
               </span>
             </Link>
             <button
@@ -103,7 +103,7 @@ export function Header() {
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="text-xl lg:text-2xl font-serif font-bold text-primary tracking-tight">
-                Rooted Foundation
+                Hear Me Out 501c3
               </span>
             </Link>
           </div>

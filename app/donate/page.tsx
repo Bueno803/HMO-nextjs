@@ -10,15 +10,15 @@ import { Label } from "@/components/ui/label"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
-const donationAmounts = [25, 50, 100, 250, 500, 1000]
+const donationAmounts = [50, 100, 250, 500, 1000, 2500]
 
 const impactExamples = [
-  { amount: "$25", impact: "Provides school supplies for one student for a semester" },
-  { amount: "$50", impact: "Sponsors a family for one health screening event" },
-  { amount: "$100", impact: "Funds a month of mentorship for a youth participant" },
-  { amount: "$250", impact: "Supplies tools and seeds for a community garden plot" },
+  { amount: "$50", impact: "Sponsors a college visit for a single participant" },
+  { amount: "$100", impact: "Funds a month of school supplies for our youth" },
+  { amount: "$250", impact: "Provides 1 month worth of safe passage for a participant to attend our programs" },
   { amount: "$500", impact: "Supports a family through our emergency assistance program" },
-  { amount: "$1,000", impact: "Funds job training for five workforce development participants" },
+  { amount: "$1,000", impact: "Provides workforce development stipends for 5 participants" },
+  { amount: "$2,500", impact: "Supplies nutritious meals to program participants for 2 months" },
 ]
 
 const givingOptions = [
@@ -35,7 +35,7 @@ const givingOptions = [
   {
     icon: Gift,
     title: "Legacy Giving",
-    description: "Include Rooted Foundation in your estate planning.",
+    description: "Include Hear Me Out 501c3 in your estate planning.",
   },
 ]
 
@@ -74,7 +74,32 @@ export default function DonatePage() {
       <main className="pt-20">
         {/* Hero */}
         <section className="relative py-16 lg:py-24">
+
           <div className="absolute inset-0 z-0">
+            <Image
+              src="/donate/headliner.png"
+              alt="Community gathering"
+              fill
+              className="object-cover"
+              priority
+              sizes="100vw"
+              quality={100}
+            />
+            <div className="absolute inset-0 bg-primary/70" />
+          </div>
+
+          <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 text-center lg:px-8 lg:py-32">
+            <h1 className="font-serif text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl text-balance">
+              Make a Difference Today<br />
+              {/* <span className="text-secondary">most likely to be missed</span> */}
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/90 lg:text-xl">
+              Your generosity helps us continue our mission of empowering communities. 
+                Every donation, no matter the size, plants a seed for positive change.
+            </p>
+          </div>
+
+          {/* <div className="absolute inset-0 z-0">
             <Image
               src="/images/donate-hero.jpg"
               alt="Making a difference"
@@ -93,7 +118,7 @@ export default function DonatePage() {
                 Every donation, no matter the size, plants a seed for positive change.
               </p>
             </div>
-          </div>
+          </div> */}
         </section>
 
         {/* Donation Form */}
@@ -236,7 +261,7 @@ export default function DonatePage() {
                   Your Impact
                 </h2>
                 <p className="mt-4 text-muted-foreground">
-                  See how your donation makes a difference in our community.
+                  See how your donation makes a difference in our community:
                 </p>
                 
                 <div className="mt-8 space-y-4">
@@ -313,9 +338,8 @@ export default function DonatePage() {
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="text-center">
               <p className="text-primary-foreground/90">
-                Rooted Foundation is a 501(c)(3) nonprofit organization. 
+                Hear Me Out 501c3 is a 501(c)(3) nonprofit organization. 
                 Your donation is tax-deductible to the fullest extent allowed by law. 
-                EIN: 12-3456789
               </p>
             </div>
           </div>

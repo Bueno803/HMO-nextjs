@@ -8,45 +8,51 @@ import { Footer } from "@/components/footer"
 const programs = [
   {
     icon: BookOpen,
-    title: "Youth Education & Mentorship",
-    description: "Our flagship program connects young people with mentors and educational resources to help them reach their full potential. We provide tutoring, college prep assistance, and career guidance.",
-    image: "/images/youth-program.jpg",
-    stats: { served: "500+", metric: "Youth Served Annually" },
-  },
-  {
-    icon: Leaf,
-    title: "Community Gardens Initiative",
-    description: "We establish and maintain community gardens that provide fresh produce to local families while creating spaces for neighbors to connect and learn about sustainable agriculture.",
-    image: "/images/community-garden.jpg",
-    stats: { served: "12", metric: "Active Gardens" },
-  },
-  {
-    icon: Home,
-    title: "Family Support Services",
-    description: "Comprehensive support for families facing hardship, including emergency assistance, resource navigation, and long-term stability planning to help families thrive.",
-    image: "/images/family-support.jpg",
-    stats: { served: "200+", metric: "Families Assisted" },
-  },
-  {
-    icon: Heart,
-    title: "Health & Wellness Programs",
-    description: "Free health screenings, wellness workshops, and mental health resources designed to improve overall community health outcomes and access to care.",
-    image: "/images/health-wellness.jpg",
-    stats: { served: "1,000+", metric: "Health Services Provided" },
+    title: "Youth Development & Academic Success",
+    description: "Supporting system-impacted youth through daily structured programming, academic support, mentorship, SEL, and life-skills development in a culturally relevant environment.",
+    services: ["Big Dogg Academy", "Diploma Pipeline", "SEL & Life Lessons"],
+    image: "/program/youthdevelopment.png",
+    objectPosition: "center",
   },
   {
     icon: Users,
-    title: "Senior Engagement",
-    description: "Programs designed to reduce isolation among seniors through social activities, technology training, and intergenerational connection opportunities.",
-    image: "/images/senior-engagement.jpg",
-    stats: { served: "150+", metric: "Active Participants" },
+    title: "Leadership, Sports & Unification",
+    description: "Building confidence, discipline, accountability, and community through athletics, mentorship, fitness, and positive peer connection.",
+    services: ["Big Dogg Sports", "Team-building", "Mentorship experiences"],
+    image: "/program/leadership.png",
+    objectPosition: "center",
   },
   {
     icon: Briefcase,
-    title: "Workforce Development",
-    description: "Job training, resume assistance, and employment placement services to help community members find meaningful employment and economic stability.",
-    image: "/images/workforce.jpg",
-    stats: { served: "300+", metric: "Job Placements" },
+    title: "Workforce & Career Readiness",
+    description: "Preparing youth and reentry adults for sustainable futures through job-readiness training, soft skills, and professional development.",
+    services: ["Workforce Opportunities", "Stipend-based initiatives", "Paid internships"],
+    image: "/program/workforce.jpg",
+    objectPosition: "center",
+  },
+  {
+    icon: Heart,
+    title: "Healing Arts & Enrichment",
+    description: "Using creative expression, gardening, and transformative experiences to support healing, emotional wellness, and expanded possibilities.",
+    services: ["Arts & Gardening", "Music & Visual Arts", "Field Trips, College Visits, etc."],
+    image: "/program/healingarts.png",
+    objectPosition: "center",
+  },
+  {
+    icon: Leaf,
+    title: "Advocacy, Diversion & Reentry Support",
+    description: "Providing court advocacy, violence intervention, mediation, and reentry support to help individuals navigate systems and move toward stability.",
+    services: ["Court Advocacy & Appointed Gang Expert Services", "Mitigation & Mediation", "Reentry Guidance"],
+    image: "/program/advocacy.png",
+    objectPosition: "center 20%",
+  },
+  {
+    icon: Home,
+    title: "Family & Community Partnerships",
+    description: "Utilizing a central location, known as Upendo House, to strengthen families and communities through holistic support, collaborative partnerships, and resource navigation.",
+    services: ["Family Support", "Housing & Benefits Navigation", "Strategic partnership with community organizations"],
+    image: "/program/family.png",
+    objectPosition: "center",
   },
 ]
 
@@ -57,18 +63,31 @@ export default function ProgramsPage() {
       
       <main className="pt-20">
         {/* Hero */}
-        <section className="bg-primary py-16 lg:py-24">
-          <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <h1 className="font-serif text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl text-balance">
-                Programs & Services
-              </h1>
-              <p className="mt-6 text-lg leading-relaxed text-primary-foreground/80">
-                Through our diverse range of programs, we address the unique needs of our 
-                communities. Each initiative is designed to create lasting impact and 
-                empower individuals to thrive.
-              </p>
-            </div>
+        <section className="relative min-h-[90vh] flex items-center justify-center pt-16">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/program/headliner.png"
+              alt="Community gathering"
+              fill
+              className="object-cover"
+              priority
+              sizes="100vw"
+              quality={100}
+            />
+            <div className="absolute inset-0 bg-primary/70" />
+          </div>
+
+          <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 text-center lg:px-8 lg:py-32">
+            <h1 className="font-serif text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl text-balance">
+              Programs & Services<br />
+              {/* <span className="text-secondary">most likely to be missed</span> */}
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/90 lg:text-xl">
+              Through our diverse range of programs, we address the unique needs of the people 
+                most likely to be missed. Each initiative is designed to equip participants with 
+                the tools, support, and confidence to take control of their futures while knowing 
+                they never have to navigate life alone.
+            </p>
           </div>
         </section>
 
@@ -89,6 +108,7 @@ export default function ProgramsPage() {
                       alt={program.title}
                       fill
                       className="object-cover"
+                      style={{ objectPosition: program.objectPosition }}
                     />
                   </div>
                   <div className="flex flex-col lg:w-1/2">
@@ -102,8 +122,15 @@ export default function ProgramsPage() {
                       {program.description}
                     </p>
                     <div className="mt-6 rounded-lg bg-muted p-4">
-                      <p className="text-3xl font-bold text-accent">{program.stats.served}</p>
-                      <p className="text-sm text-muted-foreground">{program.stats.metric}</p>
+                      <p className="text-sm font-semibold text-foreground mb-2">Services Include:</p>
+                      <ul className="space-y-1">
+                        {program.services.map((service) => (
+                          <li key={service} className="text-sm text-muted-foreground flex items-start gap-2">
+                            <span className="text-accent mt-1">•</span>
+                            {service}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </article>

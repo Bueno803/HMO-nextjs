@@ -8,36 +8,39 @@ import { Footer } from "@/components/footer"
 const impactAreas = [
   {
     icon: Users,
-    title: "Community Support",
-    description: "Strengthening local communities through targeted grant programs.",
+    title: "Serve System-Impacted Youth",
+    description: "Empowering youth with holistic services focused on basic need fulfillment, educational recovery, and social-emotional well-being.",
   },
   {
     icon: Sprout,
-    title: "Sustainable Growth",
-    description: "Investing in initiatives that create lasting, positive change.",
+    title: "Support Reentry Adults",
+    description: "Creating pathways to employment while empowering reentry adults to become mentors and community leaders.",
   },
   {
     icon: HandHeart,
-    title: "Strategic Partnerships",
-    description: "Collaborating with organizations to maximize our collective impact.",
+    title: "Pathways to Stability",
+    description: "Developing strategic partnerships that provide workforce opportunities, supportive resources, and community reintegration.",
   },
 ]
 
 const featuredPrograms = [
   {
-    title: "Youth Development",
-    description: "Empowering the next generation through education and mentorship programs.",
-    image: "/images/youth-program.jpg",
+    title: "Youth Development & Academic Success",
+    description: "Supporting system-impacted youth through education, mentorship, life skills, and structured daily programming that promotes long-term growth and stability.",
+    image: "/home/youthdevelopment.png",
+    objectPosition: "top",
   },
   {
-    title: "Community Gardens",
-    description: "Creating green spaces that bring neighborhoods together and promote sustainability.",
-    image: "/images/community-garden.jpg",
+    title: "Healing, Wellness & Community Connection",
+    description: "Creating safe spaces for healing, self-expression, physical wellness, and positive peer connection through trauma-informed and community-centered programming.",
+    image: "/home/communityconnection.png",
+    objectPosition: "center",
   },
   {
-    title: "Family Support",
-    description: "Providing resources and assistance to families in need within our communities.",
-    image: "/images/family-support.jpg",
+    title: "Advocacy, Reentry & Family Support Services",
+    description: "Helping youth, families, and reentry adults navigate systems, access resources, and build pathways toward stability, opportunity, and reintegration.",
+    image: "/home/advocacy.png",
+    objectPosition: "center",
   },
 ]
 
@@ -51,24 +54,24 @@ export default function HomePage() {
         <section className="relative min-h-[90vh] flex items-center justify-center pt-16">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/hero-community.jpg"
+              src="/home/headliner.png"
               alt="Community gathering"
               fill
               className="object-cover"
               priority
+              sizes="100vw"
+              quality={100}
             />
             <div className="absolute inset-0 bg-primary/70" />
           </div>
           
           <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 text-center lg:px-8 lg:py-32">
             <h1 className="font-serif text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl text-balance">
-              Cultivating Growth,<br />
-              <span className="text-secondary">Empowering Communities</span>
+              Established for community members<br />
+              <span className="text-secondary">most likely to be missed</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/90 lg:text-xl">
-              We are a grant-based nonprofit dedicated to fostering sustainable growth and 
-              creating meaningful impact in underserved communities. Through strategic partnerships 
-              and targeted programs, we plant the seeds for a brighter tomorrow.
+              Every day in South Los Angeles, youth get pulled into the criminal-justice trap. Most did not arrive there by accident. They arrived through compounding trauma, fractured families, neglected schools, untreated mental-health needs, and the absence of relentless, neighborhood-level prevention that other communities take for granted. Once in the legal system, many of these youth have a difficult time steering their lives back onto a productive track. The result is system impacted, reentry adults striving to make sense of an ever evolving society they never were prepared to be a part of. And this is why HEAR ME OUT is imperative.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8">
@@ -93,13 +96,10 @@ export default function HomePage() {
             <div className="mx-auto max-w-3xl text-center">
               <span className="text-sm font-semibold uppercase tracking-wider text-accent">Our Mission</span>
               <h2 className="mt-4 font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
-                Rooted in Purpose, Growing Together
+                Our Mission
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                At Rooted Foundation, we believe that every community has the potential to thrive. 
-                Our mission is to provide the resources, support, and strategic partnerships needed 
-                to help communities grow from the ground up. We are committed to transparency, 
-                sustainability, and creating lasting impact through our grant programs.
+                Hear Me Out provides holistic services with a focus on education, violence and gang prevention and social-emotional development. Our trauma-informed framework is applied through academic recovery, whole person care and court advocacy. By establishing a healthy family ecosystem aimed at breaking cycles of poverty, addiction, violence, and incarceration, Hear Me Out extends comprehensive services and programs to system-impacted youth and formerly incarcerated adults.
               </p>
             </div>
             
@@ -154,6 +154,7 @@ export default function HomePage() {
                       alt={program.title}
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      style={{ objectPosition: program.objectPosition }}
                     />
                   </div>
                   <div className="p-6">
@@ -185,8 +186,8 @@ export default function HomePage() {
                 Join Us in Making a Difference
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-primary-foreground/80">
-                Your support helps us continue our mission of empowering communities. 
-                Every donation, no matter the size, plants a seed for positive change.
+                Your support helps us continue our mission of empowering individuals and communities. 
+                Every donation turns a moment into momentum for positive change.
               </p>
               <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8">

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Mail, Phone, MapPin } from "lucide-react"
+import { Mail, Phone } from "lucide-react"
 
 const navigation = {
   main: [
@@ -10,9 +10,7 @@ const navigation = {
     { name: "Contact", href: "/contact" },
   ],
   social: [
-    { name: "Facebook", href: "#" },
     { name: "Instagram", href: "#" },
-    { name: "LinkedIn", href: "#" },
   ],
 }
 
@@ -25,12 +23,11 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block">
               <span className="text-2xl font-serif font-bold tracking-tight">
-                Rooted Foundation
+                Hear Me Out 501c3
               </span>
             </Link>
             <p className="mt-4 text-sm text-primary-foreground/80 max-w-md leading-relaxed">
-              Empowering communities through strategic grants and partnerships. 
-              Together, we cultivate growth and create lasting positive change.
+              Established for community members most likely to be missed.
             </p>
           </div>
           
@@ -55,29 +52,22 @@ export function Footer() {
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider">Contact Us</h3>
             <ul className="mt-4 space-y-3">
-              <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 flex-shrink-0 text-secondary" />
-                <span className="text-sm text-primary-foreground/80">
-                  123 Growth Avenue<br />
-                  Community Center, ST 12345
-                </span>
-              </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 flex-shrink-0 text-secondary" />
                 <a 
-                  href="tel:+15551234567" 
+                  href="tel:+13233484096" 
                   className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
-                  (555) 123-4567
+                  323-348-4096
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 flex-shrink-0 text-secondary" />
                 <a 
-                  href="mailto:info@rootedfoundation.org" 
+                  href="mailto:info@hmohearmeout.org" 
                   className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
-                  info@rootedfoundation.org
+                  info@hmohearmeout.org
                 </a>
               </li>
             </ul>
@@ -87,7 +77,7 @@ export function Footer() {
         <div className="mt-12 border-t border-primary-foreground/20 pt-8">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <p className="text-sm text-primary-foreground/60">
-              &copy; {new Date().getFullYear()} Rooted Foundation. All rights reserved.
+              &copy; {new Date().getFullYear()} Hear Me Out 501c3. All rights reserved.
             </p>
             <div className="flex gap-6">
               {navigation.social.map((item) => (
